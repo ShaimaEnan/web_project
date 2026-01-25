@@ -1,0 +1,375 @@
+       :root {
+            --primary-color: #5bc0b5; 
+            --text-muted: #888;
+            --bg-light: #f4f9f9;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .info-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .info-content {
+            width: 100%;
+            max-width: 550px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 35px;
+        }
+
+        .details-list {
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .detail-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-value {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .action-btns {
+            margin-top: 40px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn-print {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-home {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid #ddd;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-print:hover { background-color: #4aa89e; color: #fff; }
+
+        @media print {
+            .action-btns, .success-icon { display: none; }
+            .info-content { box-shadow: none; border: 1px solid #eee; }
+        }
+
+
+        /* booking_con.css */
+    /* التنسيق العام للأزرار */
+    .action-btns {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap; /* لضمان الترتيب في الشاشات الصغيرة */
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .btn-custom {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        border: 2px solid transparent;
+    }
+
+    /* زر الطباعة */
+    .btn-print {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    .btn-print:hover {
+        background-color: #48a39a;
+        transform: translateY(-2px);
+        color: white;
+    }
+
+    /* زر تغيير الموعد */
+    .btn-reschedule {
+        background-color: #fff;
+        color: #f39c12;
+        border-color: #f39c12;
+    }
+    .btn-reschedule:hover {
+        background-color: #f39c12;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* زر العودة للرئيسية */
+    .btn-home {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        border-color: #ddd;
+    }
+    .btn-home:hover {
+        background-color: #6c757d;
+        color: white;
+        border-color: #6c757d;
+        transform: translateY(-2px);
+    }
+
+    /* إخفاء الأزرار عند الطباعة */
+    @media print {
+        .action-btns {
+            display: none !important;
+        }
+    }
+
+    .action-btns-container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* الزر الكبير الأساسي */
+    .btn-main {
+        background: linear-gradient(135deg, #5bc0b5 0%, #3e9188 100%);
+        color: white;
+        border: none;
+        padding: 16px 50px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 10px 20px rgba(91, 192, 181, 0.3);
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+    }
+
+    .btn-main:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(91, 192, 181, 0.4);
+    }
+
+    /* حاوية الأزرار الفرعية */
+    .secondary-btns {
+        display: flex;
+        gap: 15px;
+    }
+
+    /* أزرار الإطار (Outline) */
+    .btn-outline-warn, .btn-outline-gray {
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1.5px solid;
+    }
+
+    .btn-outline-warn {
+        color: #e67e22;
+        border-color: #e67e22;
+        background: transparent;
+    }
+
+    .btn-outline-warn:hover {
+        background: #e67e22;
+        color: white;
+    }
+
+    .btn-outline-gray {
+        color: #7f8c8d;
+        border-color: #bdc3c7;
+        background: transparent;
+    }
+
+    .btn-outline-gray:hover {
+        background: #95a5a6;
+        color: white;
+        border-color: #95a5a6;
+    }
+
+    @media print {
+        .action-btns-container { display: none; }
+    }
+
+    .compact-actions {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 8px; /* مسافة صغيرة بين الأزرار */
+        flex-wrap: nowrap; /* إجبارهم على البقاء في سطر واحد */
+    }
+
+    .btn-mini {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px; /* حجم أصغر */
+        border-radius: 8px;
+        font-size: 0.85rem; /* خط أصغر */
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap; /* منع انكسار النص */
+    }
+
+    /* ألوان الأزرار المصغرة */
+    .btn-primary-mini {
+        background-color: #5bc0b5;
+        color: white;
+    }
+
+  .btn-warning-mini {
+        background-color: #5bc0b5;
+        color: white;
+        border: 1px solid  #5bc0b5 !important;
+        
+    }
+
+    .btn-dark-mini {
+        background-color: #f8f9fa;
+        color: #555;
+        border: 1px solid #ddd !important;
+    }
+
+    /* تأثيرات التمرير */
+    .btn-mini:hover {
+        opacity: 0.85;
+        transform: translateY(-1px);
+    }
+
+    /* إخفاء عند الطباعة */
+    @media print {
+        .compact-actions { display: none; }
+    }
+
+    /* تحسين للجوال: إذا كانت الشاشة ضيقة جداً */
+    @media (max-width: 400px) {
+        .btn-mini span { display: none; } /* إخفاء النص وإبقاء الأيقونة فقط في الشاشات الصغيرة جداً */
+        .btn-mini { padding: 10px; }
+    }
+
+    .alert-success-custom {
+        background-color: #e8f7f6;
+        color: #2d7a72;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border-right: 5px solid #5bc0b5; /* خط جانبي للتأكيد */
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        animation: slideDown 0.5s ease; /* حركة دخول ناعمة */
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sms-status-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #f0fdfa; /* لون فيروزي باهت جداً */
+        padding: 15px 20px;
+        border-radius: 18px;
+        border: 1px solid #e0f2f1;
+        margin: 25px 0;
+        text-align: right;
+    }
+
+    .sms-icon {
+        background: #5bc0b5;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .sms-text p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #48a39a;
+        line-height: 1.6;
+        font-weight: 600;
+    }
+
+  .sms-text strong {
+        color: #2e8b57;
+        text-decoration: none; /* تم إزالة الخط من هنا */
+        font-weight: 800;      /* زيادة سمك الخط لتمييز الكلمة بدلاً من الخط */}

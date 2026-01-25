@@ -1,0 +1,856 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*الالوان المستخدمة في الموقع*/
+:root {
+  --primary: #4db8ac;
+  --primary-dark: #3a9b8f;
+  --secondary: #2c5f6f;
+  --secondary-dark: #1e424d;
+  --light-teal: #e8f6f4;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --red-600: #dc2626;
+  --yellow-400: #facc15;
+  --green-600: #16a34a;
+      --primary-teal: #4dbdb6;
+    --deep-blue: #2c3e50;
+    --soft-bg: #fdfdfd;
+}
+
+/*عمل استدعاء لخط Cairo
+من قوقل*/
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap");
+
+
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--light-teal) 0%, #f0f9ff 50%, var(--light-teal) 100%);
+  color: var(--gray-900);
+  line-height: 1.6;
+    font-family: 'Cairo', sans-serif;
+    background-color: white;
+    color: var(--deep-blue);
+    min-height: 100vh;
+    display: block !important;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+
+/* تحديث تنسيق الشعار */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+
+.navbar-brand:hover .logo-text {
+  color: var(--primary);
+}
+
+
+/*navbarيقوم بتعديل نوع الخط في    
+ الذي بجانب الشعار*/
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+/*التنسيقات الخصة بال bootom*/
+
+
+/*ازالة الحواف الزرقاء من الازرار */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+
+/*تنسيق زر طوارئ واتساب*/
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+/*لون بتوم العودة الى الرئيسية*/
+.btn-outline-primary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(77, 184, 172, 0.3);
+}
+
+/*تعمل التوهج الذي في زر احجز الان  */
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+
+/*يحدد كيف تتم حركة النبض الذي في الزر*/
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 184, 172, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(77, 184, 172, 0);
+  }
+}
+
+تحديث ألوان الأزرار .btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+/*يعمل على تغميق لون البوتم عند تمرير الماوس*/
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(77, 184, 172, 0.3);
+}
+
+/*يقوم بزيادة المساحة والخط للزر ليجعله أكثر بروزاً ووضوحاً.*/
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+
+/* عمل الحركة لصورة الهيرو */
+.hero-image-wrapper {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 30px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* عمل حواف صورة الاطباء في الصفحة الرئيسية بشكل دائري*/
+.hero-image-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+
+
+
+
+
+.stat-card {
+  border: none;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* هذا الجزء هو المسؤول عن الحركة التفاعلية عند مرور الماوس */
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(77, 184, 172, 0.2) !important;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.dashboard-header {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* حركة المواعيد */
+.appointment-item {
+  transition: transform 0.3s ease;
+}
+
+.appointment-item:hover {
+  transform: scale(1.01);
+}
+
+
+.hero-title.mb-1 {
+  color: var(--primary-dark);
+  ;
+}
+
+.hero-description {
+  color: var(--secondary)
+}
+
+.btn-group-sm .btn {
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.appointment-item {
+  transition: all 0.3s ease;
+  border-left-width: 5px !important;
+  /* لتمييز الحالة بالألوان */
+}
+
+/* حالة "جاري المعاينة" تعطي نبضاً خفيفاً */
+.border-info {
+  animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-blue {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 207, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
+  }
+}
+
+.badge {
+  color: var(--secondary)
+}
+
+
+
+/* صورة الطبيب */
+.doc-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #e2e8f0;
+}
+
+/* أزرار الإدخال */
+.form-control,
+.form-select {
+  border: 1px solid #e2e8f0;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-blue);
+}
+
+.btn-submit {
+  background: var(--accent-blue);
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #0d8fa6;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+/* التنبيهات */
+.alert {
+  border: none;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+
+/*تنسيق من جزء من نحن */
+/* الإعدادات العامة للصفحة */
+.about-standalone-page {
+    background-color: #f8fdfe !important;
+    font-family: 'Almarai', sans-serif !important;
+    overflow-x: hidden;
+}
+
+/* الكرت بتصغير جديد وحركة عائمة تلقائية */
+.about-card-modern {
+    background: linear-gradient(145deg, #4dbfb6 0%, #248a82 100%);
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(77, 191, 182, 0.15);
+    max-width: 850px;
+    margin: 0 auto 60px;
+    animation: floatCard 4s ease-in-out infinite; /* حركة عائمة مستمرة */
+}
+
+/* العنوان (تصغير إضافي) */
+.section-title-ultra {
+    font-size: 2.5rem !important; /* حجم أنيق جداً */
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+}
+
+/* النص (تصغير احترافي) */
+.main-description-ultra {
+    font-size: 1.2rem !important; /* حجم الكتاب في المواقع العالمية */
+    line-height: 1.8 !important;
+    font-weight: 300 !important;
+    opacity: 0.9;
+}
+
+/* شريط التواصل */
+.contact-bar-elegant {
+    border-top: 1px solid #eef5f6;
+    padding-top: 40px;
+    }
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* أيقونات تنبض بهدوء */
+.contact-box i {
+    font-size: 1.4rem;
+    color: #4dbfb6;
+    background: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    animation: pulseIcon 3s infinite; /* نبض هادئ */
+}
+
+.contact-box span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.contact-box small {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.border-center {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+/* --- الأنميشن التلقائي (بدون هوفر) --- */
+
+/* حركة الكرت: صعود ونزول خفيف */
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* حركة الأيقونات: نبض لطيف */
+@keyframes pulseIcon {
+    0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    50% { transform: scale(1.05); box-shadow: 0 5px 20px rgba(77, 191, 182, 0.2); }
+    100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+}
+
+/* استجابة الجوال */
+@media (max-width: 991px) {
+    .border-center { border: none; }
+    .contact-box { justify-content: center; margin-bottom: 20px; }
+}
+
+/* التحكم بحجم الايقونات*/
+.contact-unit-ultra {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.contact-unit-ultra i {
+  color: #4dbfb6;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+/*تنسيق الفوتر */
+.footer-dark-ultra {
+  background-color: #1a1a1a;
+  color: #888;
+  padding: 30px 0;
+  font-size: 1.2rem;
+}
+
+/* ضبط استجابة الشاشات للتلفون لكي لا ينكسر الخط) */
+@media (max-width: 1200px) {
+  .section-title-ultra {
+    font-size: 4rem;
+  }
+
+  .main-description-ultra {
+    font-size: 2.5rem;
+  }
+
+  .contact-unit-ultra {
+    font-size: 1.5rem;
+  }
+}
+
+.nav-link {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    font-size: 1.1rem; /* تكبير بسيط لخط القائمة لتناسب حجم الشعار الجديد */
+}
+/* تكبير صورة الشعار */
+.logo-image {
+    height: 70px !important; /* يمكنك زيادة هذا الرقم ليتناسب مع ذوقك */
+    width: auto;
+}
+
+
+/* تنسيق صفحة الأقسام */
+/* --- تنسيقات صفحة الأقسام (جديد) --- */
+
+.departments-section {
+    background: #f8fdfe;
+    min-height: 80vh;
+}
+
+.section-main-title {
+    color: #2c3e50;
+}
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background: #4dbfb6;
+    border-radius: 2px;
+}
+
+/* كارد القسم والحركات */
+.dept-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: none;
+}
+
+/* حركة الرفع عند تمرير الماوس على القسم */
+.dept-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(77, 191, 182, 0.15);
+}
+
+.dept-icon-wrapper {
+    font-size: 3.5rem;
+    color: #4dbfb6;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.dept-card:hover .dept-icon-wrapper {
+    transform: scale(1.1) rotate(5deg); /* حركة للأيقونة عند الهوفر */
+}
+
+.dept-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.dept-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* زر عرض الأطباء */
+.btn-dept-link {
+    margin-top: auto;
+    font-weight: bold;
+    color: #4dbfb6;
+    border: 1px solid #4dbfb6;
+    border-radius: 10px;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-dept-link:hover {
+    background: #4dbfb6;
+    color: #ffffff !important;
+}
+
+/* --- تعديل بسيط لضمان ظهور صور الأطباء بشكل صحيح --- */
+.doc-img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+/*التنسيق الخاص بصفحة الدكاترة */
+
+.doctor-modern-card {
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out !important;
+    position: relative;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: none;
+}
+
+/* حركة الرفع عند تمرير الماوس */
+.doctor-modern-card:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: 0 20px 40px rgba(77, 184, 172, 0.2) !important;
+}
+
+/* حاوية الصورة الموحدة */
+.doc-img-wrapper {
+    position: relative;
+    height: 280px; /* طول الصورة الموحد */
+    width: 100%;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.doc-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* حركة زووم للصورة عند الهوفر */
+.doctor-modern-card:hover .doc-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* شارة التقييم */
+.rating-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    color: #ffc107;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+/* مربع النص البديل في حال عدم وجود صورة */
+.no-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #f0f4f4;
+    color: #a0acac;
+    font-weight: bold;
+}
+
+/* زر حجز الموعد */
+.btn-book-now-fixed {
+    background: #4dbfb6;
+    color: white !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-book-now-fixed:hover {
+    background: #2c3e50;
+    transform: scale(1.02);
+}
+
+/* تفاصيل النص داخل الكارد */
+.spec-label {
+    color: #4dbfb6;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.doc-name {
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.card {
+        transition: all 0.3s ease-in-out;
+        border-radius: 12px;
+        
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .bg-opacity-10 {
+        background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+    }
+     لجعل الأيقونات داخل الدوائر متناسقة */
+     .rounded-3 {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  
+  text-align: right;
+  border-bottom: solid var(--gray-100);
+}
+
+.table th {
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.table tr:hover {
+  background: var(--gray-50);
+}
+
+/* إزالة الحواف فقط من أزرار المواعيد مع الحفاظ على الظلال */
+.btn-group-sm .btn {
+    border: none !important; /* إلغاء الخط المحيط تماماً */
+    transition: all 0.3s ease; /* تنعيم الحركة عند الضغط */
+}
+
+/* التأكد من عدم ظهور حواف عند تمرير الماوس أو الضغط */
+.btn-group-sm .btn:hover, 
+.btn-group-sm .btn:focus, 
+.btn-group-sm .btn:active {
+    border: none !important;
+    /* الحفاظ على الظل الافتراضي أو إضافة ظل مخصص هنا */
+}
+
+/* إذا أردت جعل الظل (الضلال) أكثر وضوحاً عند الضغط لتعويض غياب الحواف */
+.btn-group-sm .btn:active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+.booking-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px);
+    padding: 40px 0;
+}
+
+.booking-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.page-title {
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--deep-blue);
+    margin-bottom: 5px;
+}
+
+.sub-title {
+    color: var(--primary-teal);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    display: block;
+}
+
+.input-block {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.input-block label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #7f8c8d;
+}
+
+.custom-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #eaeeef;
+    background: transparent;
+    padding: 12px 45px 12px 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--deep-blue);
+    transition: all 0.4s ease;
+    outline: none;
+}
+
+.custom-input:focus {
+    border-bottom-color: var(--primary-teal);
+    padding-right: 55px;
+}
+
+.input-block i {
+    position: absolute;
+    right: 5px;
+    bottom: 18px;
+    font-size: 1.3rem;
+    color: #bdc3c7;
+    transition: all 0.4s ease;
+}
+
+.custom-input:focus + i {
+    color: var(--primary-teal);
+    transform: scale(1.2);
+}
+
+.btn-confirm {
+    background-color: var(--primary-teal);
+    color: white;
+    border: none;
+    padding: 18px 60px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 20px rgba(77, 189, 182, 0.2);
+}
+
+.btn-confirm:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(77, 189, 182, 0.3);
+    background-color: #3ca9a2;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .booking-container { padding: 0 20px; }
+    .page-title { font-size: 1.8rem; }
+    .booking-wrapper { min-height: auto; padding-top: 50px; }
+}
+
+.card-header {
+ background:var(--secondary);
+
+}
