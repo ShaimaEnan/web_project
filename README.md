@@ -15,7 +15,7 @@
 * الأطباء (Doctors)عرض المواعيد الخاصة بالطبيب + تحديث حالة المريض (جاري المعاينة -> تمت المعاينة -> إلغاء).
 ### المعايير التقنية (Technical Standards):
 
-* اللغات البرمجية: PHP, HTML5, CSS3, JavaScript,BootStrap.
+ اللغات البرمجية: PHP, HTML5, CSS3, JavaScript,BootStrap *
 
 * قواعد البيانات: MySQL (عبر XAMPP).
 
