@@ -1,6 +1,4 @@
-<?php
-
-include 'payment_PHP.php' ?>
+<?php include 'payment_PHP.php'; ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -22,9 +20,7 @@ include 'payment_PHP.php' ?>
             </div>
 
             <div class="header-title">
-                <span style="cursor: pointer; font-size: 1.5rem;">&rsaquo;</span>
                 <h5 class="m-0 fw-bold">دفع المشتريات</h5>
-                <span></span>
             </div>
 
             <div class="nav-tabs-custom">
@@ -50,8 +46,8 @@ include 'payment_PHP.php' ?>
 
             <div class="mt-4">
                 <label class="form-label-custom">المبلغ</label>
-                <<input type="number" id="inputAmount" class="form-control" value="<?php echo $half_price; ?>" readonly>
-                    <div class="small text-muted mt-2">ريال يمني</div>
+                <input type="number" id="inputAmount" class="form-control" value="<?php echo $half_price; ?>" readonly>
+                <div class="small text-muted mt-2">ريال يمني</div>
             </div>
 
             <div class="mt-3 mb-4">
@@ -87,8 +83,6 @@ include 'payment_PHP.php' ?>
                         </div>
                     </div>
 
-                    
-
                     <div class="d-flex gap-3 mt-4">
                         <a href="booking_process_PHP.php" class="btn btn-danger flex-fill py-3 fw-bold">تنفيذ</a>
                     </div>
@@ -96,7 +90,8 @@ include 'payment_PHP.php' ?>
             </div>
         </div>
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
